@@ -1,7 +1,3 @@
-Here’s the README with a table of contents:
-
----
-
 # Anime Hub Backend 🌌
 
 ![AnimeHub Banner](public/anime_hub.jpg)

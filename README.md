@@ -1,7 +1,3 @@
-Here’s a revised `README.md` with the backend focus on managing user preferences for Anime Hub:
-
----
-
 # Anime Hub Backend
 
 The backend API for [Anime Hub](https://github.com/IgnacioBarraza/AnimeHub), a platform connecting anime and manga fans with their favorite series. This backend manages user accounts, preferences, and interactions, supporting user-specific data like favorite and followed anime/manga. The anime and manga data itself is retrieved directly on the frontend from the AniList and MangaDex APIs.

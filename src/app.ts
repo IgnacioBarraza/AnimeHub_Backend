@@ -13,11 +13,14 @@ import { notFound, errorHandler } from './middleware/index.middleware'
 /** APIs imports **/
 import api from './api/index.api'
 import { corsOptions } from './config/corsOptions'
+import { successHandler } from './config/morgan'
 
 config()
 
 const app = express()
 
+app.use(successHandler)
+app.use(errorHandler)
 app.use(morgan("dev"))
 app.use(helmet())
 app.use(cors())

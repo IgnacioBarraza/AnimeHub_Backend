@@ -12,6 +12,7 @@ import { notFound, errorHandler } from './middleware/index.middleware'
 
 /** APIs imports **/
 import api from './api/index.api'
+import { corsOptions } from './config/corsOptions'
 
 config()
 
@@ -20,6 +21,7 @@ const app = express()
 app.use(morgan("dev"))
 app.use(helmet())
 app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true, limit: '30mb' }))
 app.use(cookieParser())

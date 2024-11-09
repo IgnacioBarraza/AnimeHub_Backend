@@ -4,7 +4,7 @@ Here’s the README with a table of contents:
 
 # Anime Hub Backend 🌌
 
-![AnimeHub Banner](assets/animehub-banner.png)
+![AnimeHub Banner](public/anime_hub.jpg)
 
 > Your personalized gateway to the anime world! Anime Hub Backend provides a seamless, data-driven foundation for your anime and manga experience on [Anime Hub](https://github.com/IgnacioBarraza/AnimeHub). 
 

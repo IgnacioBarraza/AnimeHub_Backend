@@ -1,7 +1,3 @@
-Here’s a sample `README.md` for the Anime Hub backend project:
-
----
-
 # Anime Hub Backend
 
 This is the backend API for the Anime Hub project, an anime data platform that provides users with detailed anime information, user reviews, and community features. Built with Node.js, Express, TypeScript, and MongoDB, this API supports CRUD operations on anime data and user management, and provides endpoints for handling various anime-related queries and features.

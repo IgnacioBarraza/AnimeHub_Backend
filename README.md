@@ -115,7 +115,3 @@ The Anime Hub backend is responsible for storing user preferences, such as favor
 ## 📜 License
 
 This project is licensed under the MIT License.
-
---- 
-
-This setup focuses on user-specific data, making it simple for others to understand the backend’s responsibilities within the Anime Hub project. Let me know if you'd like more details on any part!

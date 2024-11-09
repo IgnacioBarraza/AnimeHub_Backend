@@ -38,6 +38,7 @@ The Anime Hub backend is responsible for storing user preferences, such as favor
      ```plaintext
      PORT=5000
      MONGO_URI=your_mongodb_connection_string
+     NODE_ENV=development
      ```
 
 4. **Run the Project**

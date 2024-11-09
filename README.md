@@ -1,29 +1,30 @@
-# Anime Hub Backend
-
-This is the backend API for the Anime Hub project, an anime data platform that provides users with detailed anime information, user reviews, and community features. Built with Node.js, Express, TypeScript, and MongoDB, this API supports CRUD operations on anime data and user management, and provides endpoints for handling various anime-related queries and features.
-
-## Table of Contents
-- [Anime Hub Backend](#anime-hub-backend)
-  - [Table of Contents](#table-of-contents)
-  - [Project Information](#project-information)
-  - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
-  - [Endpoints](#endpoints)
-    - [Auth](#auth)
-    - [Anime](#anime)
-    - [User](#user)
-    - [Reviews](#reviews)
-  - [Technologies Used](#technologies-used)
-  - [Contributing](#contributing)
-  - [License](#license)
+Here’s a revised `README.md` with the backend focus on managing user preferences for Anime Hub:
 
 ---
 
-## Project Information
+# Anime Hub Backend
 
-The Anime Hub backend API enables interactions with anime data, such as fetching details, managing user accounts, and storing reviews. It serves as the core data provider for the Anime Hub frontend, connecting users to a comprehensive anime database. This backend is optimized for high performance, featuring robust CRUD support and integration with MongoDB.
+The backend API for [Anime Hub](https://github.com/IgnacioBarraza/AnimeHub), a platform connecting anime and manga fans with their favorite series. This backend manages user accounts, preferences, and interactions, supporting user-specific data like favorite and followed anime/manga. The anime and manga data itself is retrieved directly on the frontend from the AniList and MangaDex APIs.
 
-## Installation
+## 📋 Table of Contents
+- [Anime Hub Backend](#anime-hub-backend)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [📚 Project Information](#-project-information)
+  - [🚀 Installation](#-installation)
+  - [🛠 Environment Variables](#-environment-variables)
+  - [🔌 Endpoints](#-endpoints)
+    - [🔑 **Auth**](#-auth)
+  - [🛠 Technologies Used](#-technologies-used)
+  - [🤝 Contributing](#-contributing)
+  - [📜 License](#-license)
+
+---
+
+## 📚 Project Information
+
+The Anime Hub backend is responsible for storing user preferences, such as favorite anime/manga, following lists, and user reviews. This allows users to personalize their Anime Hub experience, maintaining their preferences across devices. All anime and manga data is fetched from AniList and MangaDex on the frontend, keeping this backend lightweight and focused on user data.
+
+## 🚀 Installation
 
 1. **Clone the Repository**
    ```bash
@@ -37,7 +38,7 @@ The Anime Hub backend API enables interactions with anime data, such as fetching
    ```
 
 3. **Configure Environment Variables**
-   - Create a `.env` file in the root directory and add the following:
+   - Create a `.env` file in the root directory:
      ```plaintext
      PORT=5000
      MONGO_URI=your_mongodb_connection_string
@@ -54,60 +55,70 @@ The Anime Hub backend API enables interactions with anime data, such as fetching
      npm start
      ```
 
-## Environment Variables
+---
 
-- `PORT`: The port on which the server runs (default: 5000)
-- `MONGO_URI`: The MongoDB URI connection string
+## 🛠 Environment Variables
+
+| Variable           | Description                          |
+|--------------------|--------------------------------------|
+| `PORT`             | Port for the server (default: 5000) |
+| `MONGO_URI`        | MongoDB connection string           |
+| `NODE_ENV`        | If it's dev or production instance           |
 
 ---
 
-## Endpoints
+## 🔌 Endpoints
 
-### Auth
-- `POST /auth/register`: Register a new user.
-- `POST /auth/login`: User login to obtain a JWT token.
+### 🔑 **Auth**
+| Method | Endpoint           | Description                   |
+|--------|---------------------|-------------------------------|
+| `POST` | `/auth/register`   | Register a new user           |
+| `POST` | `/auth/login`      | User login and JWT generation |
 
-### Anime
-- `GET /anime`: Get a list of all anime with optional filters (e.g., genre, rating).
-- `GET /anime/:id`: Get details of a specific anime by ID.
-- `POST /anime`: Add a new anime (admin only).
-- `PUT /anime/:id`: Update anime details by ID (admin only).
-- `DELETE /anime/:id`: Delete an anime by ID (admin only).
+<!-- ### 👤 **User Preferences**
+| Method | Endpoint                       | Description                                         |
+|--------|--------------------------------|-----------------------------------------------------|
+| `GET`  | `/preferences/favorites`       | Retrieve user's favorite anime and manga            |
+| `POST` | `/preferences/favorites`       | Add to user's favorites                             |
+| `DELETE` | `/preferences/favorites/:id` | Remove from user's favorites by anime/manga ID      |
+| `GET`  | `/preferences/following`       | Retrieve user's followed anime and manga            |
+| `POST` | `/preferences/following`       | Add to user's following list                        |
+| `DELETE` | `/preferences/following/:id` | Remove from user's following list by anime/manga ID | -->
 
-### User
-- `GET /users/:id`: Fetch user profile by ID.
-- `PUT /users/:id`: Update user profile by ID.
-- `DELETE /users/:id`: Delete a user by ID.
+<!-- ### 📝 **Reviews**
+| Method | Endpoint               | Description                     |
+|--------|-------------------------|---------------------------------|
+| `POST` | `/reviews`             | Add a review for anime or manga |
+| `GET`  | `/reviews/:id`         | Fetch reviews for specific item |
+| `DELETE` | `/reviews/:reviewId` | Delete a review by review ID    |
 
-### Reviews
-- `POST /reviews`: Add a review for an anime.
-- `GET /reviews/:animeId`: Get all reviews for a specific anime.
-- `DELETE /reviews/:id`: Delete a review by ID.
-
-Each endpoint returns JSON data and may require JWT authentication, depending on the route.
-
----
-
-## Technologies Used
-
-- **Node.js**: Server runtime
-- **Express**: API framework
-- **TypeScript**: Typed JavaScript for enhanced development
-- **MongoDB**: NoSQL database for storing anime data and user profiles
-- **Mongoose**: MongoDB object modeling tool
-- **JWT**: Authentication standard for securing API endpoints
+> **Note:** Some endpoints may require JWT authentication. -->
 
 ---
 
-## Contributing
+## 🛠 Technologies Used
 
-1. Fork the repository.
+- **Node.js** - Server runtime
+- **Express** - API framework
+- **TypeScript** - Typed JavaScript
+- **MongoDB** - NoSQL database for user preferences and reviews
+- **JWT** - JSON Web Tokens for authentication
+
+---
+
+## 🤝 Contributing
+
+1. Fork this repository.
 2. Create a new branch (`feature/YourFeatureName`).
-3. Commit your changes.
-4. Push to the branch and open a Pull Request.
+3. Commit changes.
+4. Open a Pull Request for review.
 
 ---
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License.
+
+--- 
+
+This setup focuses on user-specific data, making it simple for others to understand the backend’s responsibilities within the Anime Hub project. Let me know if you'd like more details on any part!

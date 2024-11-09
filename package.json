@@ -1,0 +1,46 @@
+{
+  "name": "animehub_backend",
+  "version": "1.0.0",
+  "description": "Backend for anime hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.ts",
+    "start": "tsc & node dist/index.js",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/IgnacioBarraza/AnimeHub_Backend.git"
+  },
+  "author": "IgnacioBarraza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgnacioBarraza/AnimeHub_Backend/issues"
+  },
+  "homepage": "https://github.com/IgnacioBarraza/AnimeHub_Backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}

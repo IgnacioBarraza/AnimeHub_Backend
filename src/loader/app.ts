@@ -21,7 +21,6 @@ export const bootstrapExpress = (app: any) => {
   app.use(successHandler)
   app.use(errorHandler)
   app.use(morgan('dev'))
-  app.use(helmet())
   app.use(cors())
   app.use(cors(corsOptions))
   app.use(express.json())

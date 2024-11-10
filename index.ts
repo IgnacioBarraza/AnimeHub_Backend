@@ -1,12 +1,51 @@
-import app from './src/app'
+import express, { Express } from 'express'
+import { Server, createServer } from 'http'
+import { logger } from './src/config/logger'
 import { validateEnv } from './src/config/env.config'
-import { connectToMongo } from './src/config/mongoose'
+import mongoose from 'mongoose'
+import { bootstrap } from './src/loader/bootstrap'
 
-connectToMongo()
-const port = validateEnv()?.port || 5000
+const exitHandler = (server: Server | null) => {
+  if (server) {
+    server.close(async () => {
+      logger.info('Server closed')
+      process.exit(1)
+    })
+  } else {
+    process.exit(1)
+  }
+}
 
-app.listen(port, () => {
-  console.log(`Listening on port: ${port}`)
-  console.log(`http://localhost:${port}`)
-  console.log('AnimeHub Backend 🚀')
-})
+const unExpectedErrorHandler = (server: Server | null) => {
+  return function (error: Error) {
+    logger.error(error)
+    exitHandler(server)
+  }
+}
+
+const startServer = async () => {
+  const app: Express = express()
+  await bootstrap(app)
+
+  const httpServer = createServer(app)
+  const port = validateEnv()?.port
+
+  const server: Server = httpServer.listen(port, () => {
+    logger.info(`Server listening on port ${port}`)
+  })
+
+  process.on('uncaughtException', unExpectedErrorHandler(server))
+  process.on('unhandledRejection', unExpectedErrorHandler(server))
+  process.on('SIGTERM', () => {
+    logger.info('SIGTERM recieved')
+    if (server) {
+      server.close()
+    }
+  })
+
+  mongoose.connection.on('error', (err) => {
+    console.log(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`)
+  })
+}
+
+startServer()

@@ -12,10 +12,6 @@ export interface IUser extends Document {
   verificationToken?: string
   resetPasswordToken?: string
   resetPasswordExpires?: Date
-  settings: {
-    theme: 'light' | 'dark'
-    notificationsEnabled: boolean
-  }
   createdAt: Date
   updatedAt: Date
 }

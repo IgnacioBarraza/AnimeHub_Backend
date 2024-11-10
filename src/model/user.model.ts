@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { IUser } from '../interface/user.interface'
+import { IUser } from '../interface/user'
 
-const userSchema = new Schema<IUser>({
+const UserSchema = new Schema<IUser>({
   password: {
     type: String,
     minlength: [12, 'Password should have at least 12 characters'],
@@ -38,16 +38,8 @@ const userSchema = new Schema<IUser>({
   },
   lastLogin: { type: Date, default: Date.now },
   verificationToken: { type: String },
-  resetPasswordToken: { type: String },
+  resetPasswordToken: { type: String, select: true },
   resetPasswordExpires: { type: Date },
-  settings: {
-    theme: {
-      type: String,
-      enum: ['light', 'dark'],
-      default: 'light',
-    },
-    notificationsEnabled: { type: Boolean, default: true },
-  },
 }, { timestamps: true })
 
-export default model<IUser>('User', userSchema)
+export default model<IUser>('User', UserSchema)

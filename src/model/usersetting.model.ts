@@ -10,8 +10,7 @@ const UserSettingsSchema = new Schema<IUserSettings>({
   theme: {
     type: String,
     enum: ['light', 'dark'],
-    default: 'light',
-    required: true
+    default: 'dark',
   },
   notificationsEnabled: {
     type: Boolean,

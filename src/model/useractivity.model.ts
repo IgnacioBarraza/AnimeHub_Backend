@@ -15,7 +15,13 @@ const UserActivitySchema = new Schema<IUserActivity>({
   aniListId: { type: Number },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
+    required: true
+  },
+  itemType: {
+    type: String,
+    enum: ['anime', 'manga'],
+    required: true
   }
 })
 

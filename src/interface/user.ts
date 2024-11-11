@@ -13,5 +13,5 @@ export interface IUser extends Document {
   resetPasswordToken?: string
   resetPasswordExpires?: Date
   createdAt: Date
-  updatedAt: Date
+  updatedAt?: Date
 }

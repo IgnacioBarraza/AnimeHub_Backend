@@ -40,6 +40,8 @@ const UserSchema = new Schema<IUser>({
   verificationToken: { type: String },
   resetPasswordToken: { type: String, select: true },
   resetPasswordExpires: { type: Date },
+  createdAt: { type: Date, required: true, default: Date.now },
+  updatedAt: { type: Date}
 }, { timestamps: true })
 
 export default model<IUser>('User', UserSchema)

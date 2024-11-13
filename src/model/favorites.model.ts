@@ -15,6 +15,13 @@ const FavoriteSchema = new Schema<IFavorites>({
     enum: ['anime', 'manga'],
     required: true
   },
+  title: {
+    type: String,
+    required: true
+  },
+  coverImage: {
+    type: String
+  },
   addedAt: {
     type: Date,
     default: Date.now

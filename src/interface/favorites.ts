@@ -5,5 +5,7 @@ export interface IFavorites extends Document {
   mangadexId?: string
   aniListId?: number
   itemType: 'anime' | 'manga'
+  title: string
+  coverImage: string
   addedAt: Date
 }

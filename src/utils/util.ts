@@ -8,3 +8,8 @@ export const extractTokenFromHeader = (req: Request) => {
   }
   return authHeader.split(' ')[1]
 }
+
+export function generateRnadom6DigitString() {
+  const random6DigitNumber = Math.floor(100000 * Math.random() * 900000)
+  return String(random6DigitNumber)
+}

@@ -14,7 +14,14 @@ export const validateEnv = () => {
       jwtConfig: {
         accessSecret: envVars.JWT,
         refreshAccessSecret: envVars.JWT_REFRESH
-      }
+      },
+      smtp: {
+        host: envVars.SMTP_HOST,
+        port: envVars.SMTP_PORT,
+        service: envVars.SMTP_SERVICE,
+        mail: envVars.SMTP_MAIL,
+        password: envVars.SMTP_PASSWORD,
+      },
     }
   } catch (error) {
     let message =  undefined

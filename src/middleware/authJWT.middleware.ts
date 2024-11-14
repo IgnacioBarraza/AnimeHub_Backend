@@ -6,7 +6,6 @@ import { ErrorCode } from '../error/custom.error'
 import { validateEnv } from '../config/env.config'
 import { findUserById } from '../services/user.service'
 import NotFoundError from '../error/notFound.error'
-import { IUser } from '../interface/user'
 import { extractTokenFromHeader } from '../utils/util'
 
 export interface UserDataType {
